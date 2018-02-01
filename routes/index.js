@@ -6,8 +6,7 @@ router.get('/', function(req, res) {
   // console.log(req.query.name,  req.query.age);
   // res.json(brandon); 
   res.render('hello', {
-    name: req.query.name,
-    question: 'How are you?'
+    title: 'Home'
   });
 });
 
