@@ -1,14 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const storeController = require('../controllers/storeController');
 
-router.get('/', function(req, res) {
-  // const brandon = { name: 'brandon', occupation: 'web developer', age: 25 };
-  // console.log(req.query.name,  req.query.age);
-  // res.json(brandon); 
-  res.render('hello', {
-    title: 'Home'
-  });
-});
+router.get('/', storeController.homePage);
 
 router.get('/reverse/:name', function( req, res ) {
   const reversedName = [...req.params.name].reverse().join('');
@@ -16,6 +10,5 @@ router.get('/reverse/:name', function( req, res ) {
 
   res.send(`Hello, ${finalName}`);
 });
-
 
 module.exports = router;
